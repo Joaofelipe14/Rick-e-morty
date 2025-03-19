@@ -1,1 +1,10 @@
-<p>favoritos works!</p>
+<app-cabecalho></app-cabecalho>
+
+<div *ngIf="!loading && !error">
+    <div class="container">
+        <app-cards-personagens [personagens]="personagens" (personagemRemovido)="onPersonagemRemovido($event)">
+        </app-cards-personagens>
+    </div>
+</div>
+
+<app-rodape></app-rodape>
