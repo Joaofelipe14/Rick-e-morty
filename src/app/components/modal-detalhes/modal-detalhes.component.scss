@@ -1,0 +1,90 @@
+.detalhes-personagem {
+    display: flex;
+    gap: 20px;
+    padding: 45px;
+}
+
+.modal {
+    width: 100%;
+    height: 400px;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.informacoes-personagem {
+    border: 1px solid #424242;
+    border-radius: 10px;
+    padding: 10px;
+}
+
+.imagem-personagem {
+    border: 1px solid #424242;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+    margin: 0;
+    font-size: 2rem;
+    color: #333;
+    font-weight: bold;
+}
+
+hr.separador {
+    border: none;
+    border-top: 1px solid #ccc;
+    margin: 10px 0;
+}
+
+p {
+    font-size: 1rem;
+    color: #555;
+}
+
+strong {
+    color: #333;
+    font-weight: bold;
+}
+
+
+@media (max-width: 756px){
+    .detalhes-personagem {
+        flex-direction: column;
+        padding: 0px;
+    }
+
+    .modal {
+        height: auto;
+    }
+
+    .informacoes-personagem {
+        border: none;
+        border-radius: 10px;
+        padding: 10px;
+        max-width: 300px;
+    }
+    
+    .imagem-personagem {
+        border: none;
+        border-radius: 8px;
+        width: 100%;
+    }
+}
+
+.item-detalhe {
+    display: flex;
+    margin-bottom: 10px;
+    justify-content: space-between;
+}
+
+label {
+    font-weight: bold;
+    width: 150px; /* Você pode ajustar a largura conforme necessário */
+}
+
+span {
+    font-weight: normal;
+    margin-left: 10px;
+}

@@ -8,7 +8,7 @@ export interface Personagem {
     origin: { name: string, url: string };
     location: { nonameme: string, url: string };
     image: string;
-    episodio: string[];
+    episode: string[];
     url: string;
     criado: string;
   }

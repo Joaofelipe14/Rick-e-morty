@@ -1,1 +1,36 @@
-<p>modal-detalhes works!</p>
+<div *ngIf="data">  
+    <!-- Estrutura com imagem à esquerda e dados à direita -->  
+    <div class="modal">    
+      <div class="detalhes-personagem">      
+        <img [src]="data.image" [alt]="data.name" class="imagem-personagem" />      
+        <div class="informacoes-personagem">        
+          <h1>{{ data.name }}</h1>        
+          <!-- Linha cinza para separação -->        
+          <hr class="separador" />        
+          <div class="item-detalhe">          
+            <label>Status:</label>          
+            <span>{{ data.status }}</span>        
+          </div>        
+          <div class="item-detalhe">          
+            <label>Espécie:</label>          
+            <span>{{ data.species }}</span>        
+          </div>        
+          <div class="item-detalhe">          
+            <label>Gênero:</label>          
+            <span>{{ data.gender }}</span>        
+          </div>        
+          <div class="item-detalhe">          
+            <label>Local de origem:</label>          
+            <span>{{ data.origin.name }}</span>        
+          </div>        
+          <div class="item-detalhe">          
+            <label>Total de episódios:</label>          
+            <span>{{ data.episode.length }}</span>        
+          </div>      
+        </div>    
+      </div>  
+    </div>  
+  </div>  
+  
+  <!-- Exibição de erro -->  
+  
