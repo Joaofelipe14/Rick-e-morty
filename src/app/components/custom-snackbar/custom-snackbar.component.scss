@@ -1,0 +1,49 @@
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+
+.snackbar-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 20px;
+  border-radius: 8px;
+  font-family: 'Press Start 2P', cursive;
+  font-size: 14px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  animation: neon-glow 1.5s infinite alternate;
+
+  &.success {
+    background-color: #00ff00;
+    color: #000;
+    border: 2px solid #000;
+  }
+
+  &.error {
+    background-color: #ff0000;
+    color: #fff;
+    border: 2px solid #fff;
+  }
+
+  button {
+    background: none;
+    border: none;
+    color: inherit;
+    font-family: inherit;
+    font-size: inherit;
+    cursor: pointer;
+    margin-left: 20px;
+  }
+}
+
+@keyframes neon-glow {
+  0% {
+    box-shadow: 0 0 5px #39ff14, 0 0 10px #39ff14, 0 0 20px #39ff14;
+  }
+
+  50% {
+    box-shadow: 0 0 10px #39ff14, 0 0 20px #39ff14, 0 0 40px #39ff14;
+  }
+
+  100% {
+    box-shadow: 0 0 5px #39ff14, 0 0 10px #39ff14, 0 0 20px #39ff14;
+  }
+}

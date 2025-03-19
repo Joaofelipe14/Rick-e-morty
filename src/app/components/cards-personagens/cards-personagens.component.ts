@@ -29,7 +29,8 @@ export class CardsPersonagensComponent {
 
   constructor(
     public dialog: MatDialog,
-    private favoritosService: favoritarPersonagemService) { }
+    private favoritosService: favoritarPersonagemService,
+  ) { }
 
   verDetalhesPersonagem(personagem: Personagem): void {
     const dialogRef = this.dialog.open(ModalDetalhesComponent, {
@@ -44,7 +45,6 @@ export class CardsPersonagensComponent {
     if (changes['personagens']) {
       this.carregaFavoritos();
 
-   
     }
   }
 
@@ -72,7 +72,8 @@ export class CardsPersonagensComponent {
   private async carregaFavoritos() {
     const favoriteIds = await this.favoritosService.getFavoritos();
     this.favoritos = new Set(favoriteIds);
-   
+
   }
+
 
 }

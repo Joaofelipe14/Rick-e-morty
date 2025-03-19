@@ -70,11 +70,11 @@
 .star-icon i {
     color: #FFD700;
     font-size: 24px;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    transition: transform 0.3s ease, color 0.3s ease; /* Adiciona transição suave */
 }
 
 .star-icon i:hover {
-    transform: scale(1.2);
+    transform: scale(1.5);
     color: #ffcc00;
 }
 

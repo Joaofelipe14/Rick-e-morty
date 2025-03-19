@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { PageEvent } from '@angular/material/paginator';
 import { animate, style, transition, trigger } from '@angular/animations';
@@ -23,7 +23,7 @@ import { Personagem } from 'src/app/models/ personagem.model';
 })
 export class HomeComponent {
 
-  favorites = new Set<number>(); // Usar Set para armazenar os IDs dos favoritos
+  favorites = new Set<number>(); 
 
 
   personagem: Personagem[] = [];
@@ -35,7 +35,9 @@ export class HomeComponent {
   currentPage: number = 1;
   totalPages: number = 1;
 
-  constructor(private personagemService: PersonagemService, private router: Router
+  constructor(
+    private personagemService: PersonagemService,
+     private router: Router,
 
   ) {}
 
@@ -72,6 +74,8 @@ export class HomeComponent {
     this.router.navigate(['/character', id]);
   }
 
+
+ 
   onPageChange(event: PageEvent): void {
     this.currentPage = event.pageIndex + 1;
     this.fetchCharacters(this.currentPage);
