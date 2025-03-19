@@ -9,6 +9,22 @@
     position: relative;
   }
   
+  .active-link {
+    position: relative;
+    color: greenyellow; 
+  }
+  
+  .active-link::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -2px; 
+    width: 100%;
+    height: 2px;
+    background-color: greenyellow; 
+    border-radius: 2px;
+  }
+
   .background img {
     width: 250px;
     height: auto;
