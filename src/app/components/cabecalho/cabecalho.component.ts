@@ -11,7 +11,6 @@ export class CabecalhoComponent {
 
   toggleMenu() {
     this.isMenuOpen = !this.isMenuOpen;
-    console.log('abrindo menu')
   }
 
 }

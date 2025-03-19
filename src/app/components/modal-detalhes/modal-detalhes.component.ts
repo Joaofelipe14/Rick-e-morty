@@ -15,7 +15,6 @@ export class ModalDetalhesComponent {
 
   constructor(
     @Inject(MAT_DIALOG_DATA) public data: Personagem) {
-    console.log(data.episode.length);
   }
 
 

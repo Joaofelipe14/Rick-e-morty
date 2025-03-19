@@ -29,7 +29,6 @@ export class FavoritosComponent {
       next: (data) => {
         this.personagens = data;
         this.loading = false;
-        console.log(data)
       },
       error: (error) => {
         this.error = 'Erro ao carregar os personagens';
@@ -50,8 +49,6 @@ export class FavoritosComponent {
 
 
   onPersonagemRemovido(id: number) {
-    console.log('Personagem removido com ID:', id);
-
     this.personagens = this.personagens.filter(item => item.id !== id);
   }
 }

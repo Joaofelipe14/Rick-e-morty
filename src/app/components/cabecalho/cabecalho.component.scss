@@ -1,101 +1,101 @@
 .background {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: transparent !important;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 10px;
+  position: relative;
+}
+
+.active-link {
+  position: relative;
+  color: greenyellow;
+}
+
+.active-link::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -2px;
+  width: 100%;
+  height: 2px;
+  background-color: greenyellow;
+  border-radius: 2px;
+}
+
+.background img {
+  width: 250px;
+  height: auto;
+  object-fit: contain;
+}
+
+.home-nav {
+  font-weight: bolder !important;
+  color: greenyellow !important;
+}
+
+nav {
+  display: flex;
+  gap: 15px;
+}
+
+a {
+  cursor: pointer;
+  color: greenyellow;
+  text-decoration: none;
+}
+
+a:hover {
+  transform: scale(1.1);
+}
+
+/* Botão de menu para mobile */
+.menu-button {
+  display: none;
+}
+
+.mobile-nav {
+  display: none;
+  flex-direction: column;
+  background-color: white;
+  position: fixed;
+  right: 0;
+  width: 100%;
+  z-index: 1000;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  color: greenyellow;
+  margin: 0;
+  top: 56px;
+
+
+}
+
+
+/* Estilos para telas menores (mobile) */
+@media (max-width: 768px) {
+  .mobile-nav.active {
     display: flex;
-    align-items: center;
-    justify-content: space-between;
-    background-color: transparent !important;
-    max-width: 1200px;
-    margin: 0 auto;
-    padding:10px;
-    position: relative;
   }
-  
-  .active-link {
-    position: relative;
-    color: greenyellow; 
-  }
-  
-  .active-link::after {
-    content: '';
-    position: absolute;
-    left: 0;
-    bottom: -2px; 
-    width: 100%;
-    height: 2px;
-    background-color: greenyellow; 
-    border-radius: 2px;
+
+  .background {
+    background-color: #272727 !important;
+    position: fixed;
+    z-index: 1;
+    top: 0;
   }
 
   .background img {
-    width: 250px;
-    height: auto;
-    object-fit: contain;
+    width: 150px;
+
   }
-  
-  .home-nav{
-    font-weight: bolder !important;
-    color: greenyellow  !important;
-  }
-  
+
   nav {
-    display: flex;
-    gap: 15px;
+    display: none;
   }
-  
-  a {
-    cursor: pointer;
-    color: greenyellow;
-    text-decoration: none;
-  }
-  
-  a:hover {
-    transform: scale(1.1);
-  }
-  
-  /* Botão de menu para mobile */
+
   .menu-button {
-    display: none;
+    display: block;
   }
-  
-  .mobile-nav {
-    display: none;
-    flex-direction: column;
-    background-color: white;
-    position: fixed;
-    right: 0;
-    width: 100%;
-    z-index: 1000;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    color: greenyellow;
-    margin: 0;
-    top: 56px;
-  
-  
-  }
-
-  
-  /* Estilos para telas menores (mobile) */
-  @media (max-width: 768px) {
-    .mobile-nav.active {
-      display: flex;
-    }
-  
-    .background {
-      background-color: #272727 !important;
-      position: fixed;
-      z-index: 1;
-      top: 0;
-    }
-  
-    .background img {
-      width: 150px;
-
-    }
-  
-    nav {
-      display: none;
-    }
-  
-    .menu-button {
-      display: block;
-    }
-  }
+}

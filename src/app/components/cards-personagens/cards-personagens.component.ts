@@ -44,12 +44,7 @@ export class CardsPersonagensComponent {
     if (changes['personagens']) {
       this.carregaFavoritos();
 
-      if (this.favoritos.size === 0) {
-        console.log("Não há favoritos.");
-      } else {
-        console.log(`Há ${this.favoritos.size} favoritos.`);
-      }
-      console.log(this.personagens)
+   
     }
   }
 
