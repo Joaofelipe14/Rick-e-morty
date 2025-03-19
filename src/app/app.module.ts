@@ -10,6 +10,9 @@ import { RodapeComponent } from './components/rodape/rodape.component';
 import { CabecalhoComponent } from './components/cabecalho/cabecalho.component';
 import { ModalDetalhesComponent } from './components/modal-detalhes/modal-detalhes.component';
 
+import { MatToolbarModule } from '@angular/material/toolbar';
+import { MatIconModule } from '@angular/material/icon';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -18,11 +21,13 @@ import { ModalDetalhesComponent } from './components/modal-detalhes/modal-detalh
     SobreComponent,
     RodapeComponent,
     CabecalhoComponent,
-    ModalDetalhesComponent
+    ModalDetalhesComponent,
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    MatToolbarModule,
+    MatIconModule
   ],
   providers: [],
   bootstrap: [AppComponent]

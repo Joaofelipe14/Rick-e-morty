@@ -1,1 +1,22 @@
-<p>cabecalho works!</p>
+<mat-toolbar class="background">
+
+    <img src="../../assets/logo.png" alt="Logo">
+
+    <span class="spacer"></span>
+    <nav class="home-nav">
+        <a mat-button routerLink="/home" routerLinkActive="active-link">Home</a>
+        <a mat-button routerLink="/sobre" routerLinkActive="active-link">Sobre</a>
+        <a mat-button routerLink="/favoritos" routerLinkActive="active-link">Favoritos</a>
+    </nav>
+
+    <button style="color: greenyellow;" class="menu-button" (click)="toggleMenu()">
+        <mat-icon style="color: greenyellow;">menu</mat-icon>
+    </button>
+
+</mat-toolbar>
+
+<div class="mobile-nav" [class.active]="isMenuOpen">
+    <a mat-button routerLink="/home" (click)="toggleMenu()">Home</a>
+    <a mat-button routerLink="/sobre" (click)="toggleMenu()">Sobre</a>
+    <a mat-button routerLink="/favoritos" (click)="toggleMenu()">Favoritos</a>
+</div>

@@ -7,4 +7,11 @@ import { Component } from '@angular/core';
 })
 export class CabecalhoComponent {
 
+  isMenuOpen = false;
+
+  toggleMenu() {
+    this.isMenuOpen = !this.isMenuOpen;
+    console.log('abrindo menu')
+  }
+
 }
