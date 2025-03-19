@@ -25,7 +25,7 @@ export class CardsPersonagensComponent {
 
   favoritos = new Set<number>();
   @Input() personagens: Personagem[] = [];
-  @Output() personagemRemovido = new EventEmitter<number>();  
+  @Output() personagemRemovido = new EventEmitter<number>();
 
   constructor(
     public dialog: MatDialog,
@@ -43,6 +43,13 @@ export class CardsPersonagensComponent {
   ngOnChanges(changes: SimpleChanges) {
     if (changes['personagens']) {
       this.carregaFavoritos();
+
+      if (this.favoritos.size === 0) {
+        console.log("Não há favoritos.");
+      } else {
+        console.log(`Há ${this.favoritos.size} favoritos.`);
+      }
+      console.log(this.personagens)
     }
   }
 
@@ -70,6 +77,7 @@ export class CardsPersonagensComponent {
   private async carregaFavoritos() {
     const favoriteIds = await this.favoritosService.getFavoritos();
     this.favoritos = new Set(favoriteIds);
+   
   }
 
 }

@@ -25,6 +25,7 @@ import { MatInputModule } from '@angular/material/input';
 import { MatDialogModule } from '@angular/material/dialog';
 import { MatPaginatorIntl } from '@angular/material/paginator';
 import { CardsPersonagensComponent } from './components/cards-personagens/cards-personagens.component'; 
+import { MatSidenavModule } from '@angular/material/sidenav'; // Import the MatSidenavModule
 
 
 export function getPaginatorIntl() {
@@ -63,6 +64,7 @@ export function getPaginatorIntl() {
     MatInputModule,
     MatSelectModule,
     MatPaginatorModule,
+    MatSidenavModule,
     // MatProgressSpinnerModule,
     MatDialogModule,
   ],

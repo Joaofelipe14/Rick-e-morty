@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { map, Observable } from 'rxjs';
+import { map, Observable, of } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -17,6 +17,10 @@ export class PersonagemService {
 
   getPersonagemPorId(ids: number[]): Observable<any[]> {
     const idsString = ids.join(',');
+
+    if (ids.length === 0) {
+      return of([]);
+  }
 
     return this.http.get<any>(`${this.apiUrl}/${idsString}`).pipe(
       map((response: any) => Array.isArray(response) ? response : [response])

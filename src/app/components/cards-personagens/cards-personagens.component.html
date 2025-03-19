@@ -1,28 +1,35 @@
-<div class="personagem-lista" @transicaoDePag>
+<!-- Renderização condicional dos templates -->
+<ng-container *ngIf="personagens.length > 0; else nenhumFavorito">
+    <ng-container *ngTemplateOutlet="listaFavoritos"></ng-container>
+</ng-container>
 
-    <mat-card *ngFor="let personagem of personagens" class="cartao-personagem">
-        <div class="cabecalho-cartao">
-            <img mat-card-image [src]="personagem.image" [alt]="personagem.name" class="imagem-personagem" />
-            <div class="star-icon" 
-            (click)="favoritar(personagem.id)"
-            >
-                <i class="material-icons" [class.favorito]="isFavorito(personagem.id)">
-                  {{ isFavorito(personagem.id) ? 'star' : 'star_border' }}
-                </i>
-              </div>
-        </div>
-        <mat-card-content (click)="verDetalhesPersonagem(personagem)" class="conteudo-cartao">
-            <div class="informacoes-personagem">
-                <div class="detalhe-personagem">
-                    <span class="rotulo-detalhe">Nome:</span>
-                    <span class="valor-detalhe">{{ personagem.name }}</span>
-                </div>
-                <div class="detalhe-personagem">
-                    <span class="rotulo-detalhe">Status:</span>
-                    <span class="valor-detalhe">{{ personagem.status }}</span>
+<ng-template #nenhumFavorito>
+    <h1 class="error" >Nenhum personagem  encontrado.</h1>
+</ng-template>
+
+<ng-template #listaFavoritos>
+    <div class="personagem-lista" @transicaoDePag>
+        <mat-card *ngFor="let personagem of personagens" class="cartao-personagem">
+            <div class="cabecalho-cartao">
+                <img mat-card-image [src]="personagem.image" [alt]="personagem.name" class="imagem-personagem" />
+                <div class="star-icon" (click)="favoritar(personagem.id)">
+                    <i class="material-icons" [class.favorito]="isFavorito(personagem.id)">
+                        {{ isFavorito(personagem.id) ? 'star' : 'star_border' }}
+                    </i>
                 </div>
             </div>
-        </mat-card-content>
-    </mat-card>
-
-</div>
+            <mat-card-content (click)="verDetalhesPersonagem(personagem)" class="conteudo-cartao">
+                <div class="informacoes-personagem">
+                    <div class="detalhe-personagem">
+                        <span class="rotulo-detalhe">Nome:</span>
+                        <span class="valor-detalhe">{{ personagem.name }}</span>
+                    </div>
+                    <div class="detalhe-personagem">
+                        <span class="rotulo-detalhe">Status:</span>
+                        <span class="valor-detalhe">{{ personagem.status }}</span>
+                    </div>
+                </div>
+            </mat-card-content>
+        </mat-card>
+    </div>
+</ng-template>

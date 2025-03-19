@@ -10,14 +10,24 @@ body {
 }
 
 
-.container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 15px;
-}
 
 * {
     font-family: "Special Elite", system-ui;
     font-weight: normal;
     font-style: normal;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 15px;
+    min-height: 86vh;
+}
+
+@media (max-width: 768px) {
+
+    .container {
+        padding-top: 80px;
+    }
+
 }

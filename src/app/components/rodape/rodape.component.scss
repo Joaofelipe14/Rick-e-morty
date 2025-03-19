@@ -1,14 +1,8 @@
+
 mat-toolbar {
     background-color: #272727;
-    position: relative;
-    bottom: 0;
     width: 100%;
-    text-align: center;
-}
-
-.app-footer {
     opacity: 0;
-    visibility: hidden;
     animation: fadeIn 1s ease-in-out 1s forwards;
     text-align: center;
     padding: 10px;
@@ -16,10 +10,9 @@ mat-toolbar {
     position: relative;
     justify-content: center;
     align-items: center;
-
+ 
 }
 
-/* Define a animação fadeIn */
 @keyframes fadeIn {
     0% {
         opacity: 0;
@@ -31,8 +24,6 @@ mat-toolbar {
         visibility: visible;
     }
 }
-
-
 
 .project-description {
     color: white;
