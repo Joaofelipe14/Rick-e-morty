@@ -1,0 +1,21 @@
+<div class="personagem-lista" @transicaoDePag>
+
+    <mat-card *ngFor="let personagem of personagens" class="cartao-personagem">
+        <div class="cabecalho-cartao">
+            <img mat-card-image [src]="personagem.image" [alt]="personagem.name" class="imagem-personagem" />
+        </div>
+        <mat-card-content class="conteudo-cartao">
+            <div class="informacoes-personagem">
+                <div class="detalhe-personagem">
+                    <span class="rotulo-detalhe">Nome:</span>
+                    <span class="valor-detalhe">{{ personagem.name }}</span>
+                </div>
+                <div class="detalhe-personagem">
+                    <span class="rotulo-detalhe">Status:</span>
+                    <span class="valor-detalhe">{{ personagem.status }}</span>
+                </div>
+            </div>
+        </mat-card-content>
+    </mat-card>
+
+</div>
