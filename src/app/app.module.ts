@@ -8,8 +8,8 @@ import { AppComponent } from './app.component';
 import { HomeComponent } from './pages/home/home.component';
 import { FavoritosComponent } from './pages/favoritos/favoritos.component';
 import { SobreComponent } from './pages/sobre/sobre.component';
-import { RodapeComponent } from './components/rodape/rodape.component';
-import { CabecalhoComponent } from './components/cabecalho/cabecalho.component';
+import { RodapeComponent } from './layout/rodape/rodape.component';
+import { CabecalhoComponent } from './layout/cabecalho/cabecalho.component';
 import { ModalDetalhesComponent } from './components/modal-detalhes/modal-detalhes.component';
 
 
@@ -28,7 +28,7 @@ import { CardsPersonagensComponent } from './components/cards-personagens/cards-
 import { MatSidenavModule } from '@angular/material/sidenav'; // Import the MatSidenavModule
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { CustomSnackbarComponent } from './components/custom-snackbar/custom-snackbar.component';
-import { LoadingComponent } from './loading/loading.component'; // Importe o módulo da Snackbar
+import { LoadingComponent } from './components/loading/loading.component'; // Importe o módulo da Snackbar
 import { MatTableModule } from '@angular/material/table';
 import { MatExpansionModule } from '@angular/material/expansion';
 
