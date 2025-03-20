@@ -1,0 +1,27 @@
+.scroll-to-top-footer {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background-color: gray;
+  color: white;
+  border-radius: 50%;
+  padding: 10px;
+  cursor: pointer;
+  z-index: 5;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.scroll-to-top-footer mat-icon {
+  font-size: 24px;
+}
+
+.scroll-to-top-footer.show {
+  display: block;
+}
+
+.scroll-to-top-footer:hover{
+  transform: scale(1.1);
+}
+

@@ -12,7 +12,14 @@
             [ngClass]="{'status-vivo': data.status === 'Alive', 'status-morto': data.status === 'Dead', 'status-desconhecido': data.status === 'unknown'}">
             <span class="status-indicador"
               [ngClass]="{'status-indicador-vivo': data.status === 'Alive', 'status-indicador-morto': data.status === 'Dead', 'status-indicador-desconhecido': data.status === 'unknown'}"></span>
-            {{ data.status }}
+
+            <ng-container [ngSwitch]="data.status">
+              <span *ngSwitchCase="'Alive'">VIvo</span>
+              <span *ngSwitchCase="'Dead'">Morto</span>
+              <span *ngSwitchCase="'unknown'">Desconhecido</span>
+              <span *ngSwitchDefault>Desconhecido</span>
+            </ng-container>
+
           </span>
         </div>
         <div class="item-detalhe">

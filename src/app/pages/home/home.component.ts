@@ -72,15 +72,11 @@ export class HomeComponent {
     this.buscaPersonagens();
   }
 
-  viewDetails(id: number): void {
-    this.router.navigate(['/character', id]);
-  }
-
-
-
   onPageChange(event: PageEvent): void {
     this.currentPage = event.pageIndex + 1;
     this.buscaPersonagens(this.currentPage);
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+
   }
 
 

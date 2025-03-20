@@ -13,10 +13,10 @@
             class="cartao-personagem">
 
             <button class="star-icon" (click)="favoritar(personagem.id)" type="button">
-    <i class="material-icons" [class.favorito]="isFavorito(personagem.id)">
-        {{ isFavorito(personagem.id) ? 'star' : 'star_border' }}
-    </i>
-</button>
+                <i class="material-icons" [class.favorito]="isFavorito(personagem.id)">
+                    {{ isFavorito(personagem.id) ? 'star' : 'star_border' }}
+                </i>
+            </button>
             <div class="cabecalho-cartao" (click)="verDetalhesPersonagem(personagem)">
                 <img mat-card-image [src]="personagem.image" [alt]="personagem.name" class="imagem-personagem" />
 
@@ -29,7 +29,14 @@
                     </div>
                     <div class="detalhe-personagem">
                         <span class="rotulo-detalhe">Status:</span>
-                        <span class="valor-detalhe">{{ personagem.status }}</span>
+                        <span class="valor-detalhe">
+                            <ng-container [ngSwitch]="personagem.status">
+                                <span *ngSwitchCase="'Alive'">Vivo</span>
+                                <span *ngSwitchCase="'Dead'">Morto</span>
+                                <span *ngSwitchCase="'unknown'">Desconhecido</span>
+                                <span *ngSwitchDefault>Desconhecido</span>
+                            </ng-container>
+                        </span>
                     </div>
                 </div>
             </mat-card-content>

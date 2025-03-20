@@ -31,6 +31,7 @@ import { CustomSnackbarComponent } from './components/custom-snackbar/custom-sna
 import { LoadingComponent } from './components/loading/loading.component'; // Importe o módulo da Snackbar
 import { MatTableModule } from '@angular/material/table';
 import { MatExpansionModule } from '@angular/material/expansion';
+import { RolarParaTopoComponent } from './components/rolar-para-topo/rolar-para-topo.component';
 
 
 export function getPaginatorIntl() {
@@ -55,6 +56,7 @@ export function getPaginatorIntl() {
     CardsPersonagensComponent,
     CustomSnackbarComponent,
     LoadingComponent,
+    RolarParaTopoComponent,
   ],
   imports: [
     BrowserModule,
