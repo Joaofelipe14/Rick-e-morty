@@ -1,7 +1,7 @@
 # Rick and Morty
 
 Este é um projeto desenvolvido com **Angular**, aplicando conceitos importantes como componentização, separação de responsabilidades, consumo de API,responsividade e gestão de estado básica. Ele consome a API pública do Rick and Morty ([https://rickandmortyapi.com/](https://rickandmortyapi.com/)) para permitir a pesquisa e exibição de personagens da série.
-Você pode ver a prévia do projeto [aqui](https://rick-mordy.netlify.app/).
+[Você pode ver a prévia do projeto aqui](https://rick-mordy.netlify.app).
 
 ## Funcionalidades
 - Pesquisa de personagens por nome
