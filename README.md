@@ -84,6 +84,6 @@ Este projeto está sob a licença MIT.
 snack-bar de alert                               [x]
 Add icones de status para deixar mais interativo [x]
 Add loading                                      [x]
-filtro ajeitar e add nos favoritos               [ ]
+filtro ajeitar e add nos favoritos               [x]
 sobre nos                                        [ ]
 AJeitar rodapé                                   [ ]

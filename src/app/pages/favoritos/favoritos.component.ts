@@ -29,14 +29,12 @@ export class FavoritosComponent {
 
   buscarPersonagens(ids: number[]): void {
     this.loading = true;
-    console.log('this.loading-> ',this.loading)
     this.personagemService.getPersonagemPorId(ids).subscribe({
       next: (data) => {
         this.personagens = data;
         this.personagens = data;
         this.personagensFiltrados = this.personagens;
-        // this.loading = false;
-        console.log(this.loading)
+        this.loading = false;
 
       },
       error: (error) => {
@@ -48,9 +46,6 @@ export class FavoritosComponent {
 
   filtarPersonagens(): void {
 
-    console.log(this.statusFilter)
-
-    console.log(this.nameFilter.toLowerCase())
     this.personagensFiltrados = this.personagens.filter(character => {
       const nameMatch = character.name.toLowerCase().includes(this.nameFilter.toLowerCase());
       const statusMatch = this.statusFilter == 'all' || character.status.toLowerCase() == this.statusFilter.toLowerCase();
@@ -70,6 +65,6 @@ export class FavoritosComponent {
 
 
   onPersonagemRemovido(id: number) {
-    this.personagens = this.personagens.filter(item => item.id !== id);
+    this.personagensFiltrados = this.personagensFiltrados.filter(item => item.id !== id);
   }
 }

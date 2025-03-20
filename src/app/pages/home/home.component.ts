@@ -23,7 +23,7 @@ import { Personagem } from 'src/app/models/ personagem.model';
 })
 export class HomeComponent {
 
-  favorites = new Set<number>(); 
+  favorites = new Set<number>();
 
 
   personagem: Personagem[] = [];
@@ -37,17 +37,17 @@ export class HomeComponent {
 
   constructor(
     private personagemService: PersonagemService,
-     private router: Router,
+    private router: Router,
 
-  ) {}
+  ) { }
 
   ngOnInit(): void {
-    this.fetchCharacters(); 
+    this.buscaPersonagens();
   }
 
-  fetchCharacters(page: number = 1): void {
+  buscaPersonagens(page: number = 1): void {
     this.loading = true;
-    this.personagemService.getPersonagem(page).subscribe({
+    this.personagemService.getPersonagem(page, this.nameFilter, this.statusFilter).subscribe({
       next: (data: { results: any[]; info: { pages: number; }; }) => {
         this.personagem = data.results;
         this.personagensFiltrados = this.personagem;
@@ -56,18 +56,20 @@ export class HomeComponent {
         this.loading = false;
       },
       error: (error) => {
-        this.error = 'Erro ao carregar os personagens';
+
+        console.log(error.error.error)
+        if (error.status === 404) {
+          console.log('404')
+          this.personagensFiltrados = []
+
+        }
         this.loading = false;
       }
     });
   }
 
   filtarPersonagens(): void {
-    this.personagensFiltrados = this.personagem.filter(character => {
-      const nameMatch = character.name.toLowerCase().includes(this.nameFilter.toLowerCase());
-      const statusMatch = this.statusFilter === 'all' || character.status.toLowerCase() == this.statusFilter.toLowerCase();
-      return nameMatch && statusMatch;
-    });
+    this.buscaPersonagens();
   }
 
   viewDetails(id: number): void {
@@ -75,12 +77,12 @@ export class HomeComponent {
   }
 
 
- 
+
   onPageChange(event: PageEvent): void {
     this.currentPage = event.pageIndex + 1;
-    this.fetchCharacters(this.currentPage);
+    this.buscaPersonagens(this.currentPage);
   }
 
-  
+
 
 }

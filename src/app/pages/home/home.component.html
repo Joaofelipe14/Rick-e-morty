@@ -1,39 +1,43 @@
 <app-cabecalho></app-cabecalho>
 
-<div *ngIf="!loading && !error">
-    <div class="container">
-  
-      <!-- Filtros -->
-      <div class="filtros">
-        <mat-form-field  style="border-radius: 10px;" appearance="fill">
-          <mat-label>Buscar por nome</mat-label>
-          <input matInput [(ngModel)]="nameFilter" (input)="filtarPersonagens()" placeholder="Nome do personagem" />
-        </mat-form-field>
-  
-        <app-loading [isLoading]="loading"></app-loading>
-        <mat-form-field appearance="fill">
-          <mat-label>Status</mat-label>
-          <mat-select style="border-radius: 10px;" [(ngModel)]="statusFilter" (selectionChange)="filtarPersonagens()">
-            <mat-option value="all">Todos</mat-option>
-            <mat-option value="alive">Vivo</mat-option>
-            <mat-option value="dead">Morto</mat-option>
-            <mat-option value="unknown">Desconhecido</mat-option>
-          </mat-select>
-        </mat-form-field>
-      </div>
-  
 
-      <!-- Listagem de personagens -->
-        <app-cards-personagens [personagens]="personagensFiltrados"></app-cards-personagens>
+<div class="container">
 
-      <!-- Navegação entre páginas -->
-      <mat-paginator class="centro" [length]="totalPages * 20" [pageSize]="20" [pageIndex]="currentPage - 1"
-        (page)="onPageChange($event)">
-      </mat-paginator>
-      
+  <div class="container-topo">
+    <h1 class="titulo">Lista de personagem</h1>
+
+    <!-- Filtros -->
+    <div class="filtros">
+      <mat-form-field class="campo-formulario" appearance="fill">
+        <mat-label>Buscar por nome</mat-label>
+        <input matInput [(ngModel)]="nameFilter" (input)="filtarPersonagens()" placeholder="Nome do personagem" />
+      </mat-form-field>
+
+      <mat-form-field class="campo-formulario" appearance="fill">
+        <mat-label>Status</mat-label>
+        <mat-select class="campo-formulario-select" [(ngModel)]="statusFilter" (selectionChange)="filtarPersonagens()">
+          <mat-option value="all">Todos</mat-option>
+          <mat-option value="alive">Vivo</mat-option>
+          <mat-option value="dead">Morto</mat-option>
+          <mat-option value="unknown">Desconhecido</mat-option>
+        </mat-select>
+      </mat-form-field>
     </div>
+
   </div>
 
+
+  <app-loading [isLoading]="loading"></app-loading>
+
+
+  <!-- Listagem de personagens -->
+  <app-cards-personagens *ngIf="!loading" [personagens]="personagensFiltrados"></app-cards-personagens>
+
+  <!-- Navegação entre páginas -->
+  <mat-paginator *ngIf="!loading" class="centro" [length]="totalPages * 20" [pageSize]="20"
+    [pageIndex]="currentPage - 1" (page)="onPageChange($event)">
+  </mat-paginator>
+
+</div>
+
 <app-rodape></app-rodape>
-
-

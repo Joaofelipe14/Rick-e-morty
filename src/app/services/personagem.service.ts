@@ -11,8 +11,17 @@ export class PersonagemService {
 
   constructor(private http: HttpClient) { }
 
-  getPersonagem(page: number): Observable<any> {
-    return this.http.get<any>(`${this.apiUrl}?page=${page}`);
+  getPersonagem(page: number, nameFilter: string, statusFilter: string): Observable<any> {
+    let url = `${this.apiUrl}?page=${page}`;
+
+    if (nameFilter) {
+      url += `&name=${nameFilter}`;
+    }
+    if (statusFilter && statusFilter !== 'all') {
+      url += `&status=${statusFilter}`;
+    }
+
+    return this.http.get<any>(url);
   }
 
   getPersonagemPorId(ids: number[]): Observable<any[]> {
@@ -20,7 +29,7 @@ export class PersonagemService {
 
     if (ids.length === 0) {
       return of([]);
-  }
+    }
 
     return this.http.get<any>(`${this.apiUrl}/${idsString}`).pipe(
       map((response: any) => Array.isArray(response) ? response : [response])

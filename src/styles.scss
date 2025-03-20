@@ -2,7 +2,7 @@
 @import 'node_modules/@angular/material/theming';
 
 // Definindo a cor primária como verde
-$custom-primary: mat-palette($mat-green, 300); 
+$custom-primary: mat-palette($mat-green, 300);
 
 $custom-accent: mat-palette($mat-green, 500); // Cor de destaque (opcional)
 
@@ -24,8 +24,6 @@ body {
     height: 100%;
 }
 
-
-
 body {
     margin: 0;
     background-image: url('assets/1.png');
@@ -33,12 +31,40 @@ body {
 }
 
 
-
 * {
     font-family: "Special Elite", system-ui;
     font-weight: normal;
     font-style: normal;
 }
+
+
+/*css principal da home e favoritos*/
+.filtros {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+    flex-wrap: nowrap;
+    flex-direction: row;
+}
+
+
+.titulo {
+    color: antiquewhite;
+}
+
+.container-topo {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    align-items: flex-start;
+    justify-content: space-between;
+
+}
+
+// .campo-formulario {
+//     // max-width: 300px;
+//     width: 100%
+// }
 
 .container {
     max-width: 1200px;
@@ -53,14 +79,14 @@ body {
         padding-top: 80px;
     }
 
+    .filtros {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .container-topo {
+        align-items: center;
+        display: flex;
+        flex-direction: column;
+    }
 }
-
-
-
-
-.filtros {
-    display: flex;
-    justify-content: space-between;
-    margin-bottom: 20px;
-  }
-  
