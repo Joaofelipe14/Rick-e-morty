@@ -1,6 +1,7 @@
 # Rick and Morty
 
-Este é um projeto desenvolvido com **Angular 16**, aplicando conceitos importantes como componentização, separação de responsabilidades, consumo de API e gestão de estado básica. Ele consome a API pública do Rick and Morty ([https://rickandmortyapi.com/](https://rickandmortyapi.com/)) para permitir a pesquisa e exibição de personagens da série.
+Este é um projeto desenvolvido com **Angular**, aplicando conceitos importantes como componentização, separação de responsabilidades, consumo de API,responsividade e gestão de estado básica. Ele consome a API pública do Rick and Morty ([https://rickandmortyapi.com/](https://rickandmortyapi.com/)) para permitir a pesquisa e exibição de personagens da série.
+Você pode ver a prévia do projeto [aqui](https://rick-mordy.netlify.app/).
 
 ## Funcionalidades
 - Pesquisa de personagens por nome
@@ -88,7 +89,12 @@ Páginas da aplicação que combinam componentes para criar experiências comple
 Camada de acesso a dados e lógica de negócios:
 
 - **personagem.service**: Comunicação com API externa  
-- **favoritarPersonagem.service**: Gerenciamento de estado para favoritos  
+- **favoritarPersonagem.service**: Gerenciamento de estado para favoritos
+
+# Fluxo de dados
+
+![Fluxo de dados](https://raw.githubusercontent.com/Joaofelipe14/Rick-e-morty/refs/heads/main/src/assets/fluxo_de_dados.png)
+
 
 ## Tecnologias Utilizadas
 - ![Angular](https://img.shields.io/badge/Angular-16-red?style=for-the-badge&logo=angular) **Angular 16**: Framework para desenvolvimento web
