@@ -29,6 +29,8 @@ import { MatSidenavModule } from '@angular/material/sidenav'; // Import the MatS
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { CustomSnackbarComponent } from './components/custom-snackbar/custom-snackbar.component';
 import { LoadingComponent } from './loading/loading.component'; // Importe o módulo da Snackbar
+import { MatTableModule } from '@angular/material/table';
+import { MatExpansionModule } from '@angular/material/expansion';
 
 
 export function getPaginatorIntl() {
@@ -72,7 +74,9 @@ export function getPaginatorIntl() {
     MatSidenavModule,
     // MatProgressSpinnerModule,
     MatDialogModule,
-    MatSnackBarModule
+    MatSnackBarModule,
+    MatTableModule,
+    MatExpansionModule
   ],
   providers: [
     { provide: MatPaginatorIntl, useFactory: getPaginatorIntl },

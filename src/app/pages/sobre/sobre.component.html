@@ -1,15 +1,148 @@
 <app-cabecalho></app-cabecalho>
 
-    <div class="container">
-       
-        <p style="color: white;" >Rick and Morty é uma série de animação adulta que conquistou fãs ao redor do mundo com sua mistura única de humor ácido, ficção científica e momentos emocionantes. Criada por Justin Roiland e Dan Harmon, a série acompanha as aventuras de Rick Sanchez, um cientista brilhante, mas extremamente cínico e alcoólatra, e seu neto Morty Smith, um adolescente ingênuo e muitas vezes assustado.
+<div class="container">
+    <div class="sobre-container">
+        <mat-accordion>
 
-            A dinâmica entre os dois personagens é o coração da série. Rick, com sua inteligência incomparável, inventa dispositivos e tecnologias que permitem que ele e Morty viajem por diferentes dimensões, planetas e realidades. No entanto, suas invenções frequentemente levam a situações caóticas e perigosas, colocando a dupla em enrascadas hilárias e, às vezes, perturbadoras.
-            
-            Morty, por outro lado, representa a inocência e a humanidade em meio ao caos. Apesar de suas constantes reclamações e medos, ele acaba sendo arrastado para as aventuras de Rick, aprendendo lições valiosas (e muitas vezes dolorosas) sobre a vida, o universo e tudo mais.
-            
-            A série é conhecida por sua narrativa complexa e por explorar temas profundos, como existencialismo, ética, e as consequências das ações humanas. Cada episódio é uma jornada única, repleta de referências à cultura pop, paródias de filmes e séries, e uma boa dose de humor negro.</p>
+            <!-- Seção Introdução ao Projeto -->
+            <mat-expansion-panel>
+                <mat-expansion-panel-header>
+                    <mat-panel-title>
+                        Sobre o Projeto
+                    </mat-panel-title>
+                </mat-expansion-panel-header>
+                <p>Este é um projeto desenvolvido com Angular 16, que aplica conceitos importantes como componentização,
+                    separação de responsabilidades, consumo de API e gestão de estado básica. Ele consome a API pública
+                    do Rick
+                    and Morty (https://rickandmortyapi.com/) para permitir a pesquisa e exibição de personagens da
+                    série.</p>
+            </mat-expansion-panel>
+
+            <!-- Seção Funcionalidades -->
+            <mat-expansion-panel>
+                <mat-expansion-panel-header>
+                    <mat-panel-title>
+                        Funcionalidades
+                    </mat-panel-title>
+                </mat-expansion-panel-header>
+                <ul class="features-list">
+                    <li><mat-icon>search</mat-icon> Pesquisa de personagens por nome</li>
+                    <li><mat-icon>filter_list</mat-icon> Filtragem por status (vivo, morto, desconhecido)</li>
+                    <li><mat-icon>navigate_next</mat-icon> Navegar na lista de personagens</li>
+                    <li><mat-icon>info</mat-icon> Exibição de detalhes do personagem</li>
+                    <li><mat-icon>album</mat-icon> Exibição do total de personagens</li>
+                    <li><mat-icon>favorite</mat-icon> Extra: Adicionar e listar personagens aos favoritos</li>
+                </ul>
+            </mat-expansion-panel>
+
+            <!-- Seção Tecnologias Utilizadas -->
+            <mat-expansion-panel>
+                <mat-expansion-panel-header>
+                    <mat-panel-title>
+                        Tecnologias Utilizadas
+                    </mat-panel-title>
+                </mat-expansion-panel-header>
+                <ul class="tech-list">
+                    <li><mat-icon>check_circle</mat-icon> Angular 16: Framework para desenvolvimento web</li>
+                    <li><mat-icon>check_circle</mat-icon> TypeScript: Linguagem utilizada no Angular</li>
+                    <li><mat-icon>check_circle</mat-icon> Angular Material: UI Components</li>
+                    <li><mat-icon>check_circle</mat-icon> HttpClient: Para consumo da API</li>
+                </ul>
+            </mat-expansion-panel>
+
+            <!-- Seção API Utilizada -->
+            <mat-expansion-panel>
+                <mat-expansion-panel-header>
+                    <mat-panel-title>
+                        API Utilizada
+                    </mat-panel-title>
+                </mat-expansion-panel-header>
+                <p>Os dados são consumidos da API pública do Rick and Morty:
+                    <a href="https://rickandmortyapi.com/documentation" target="_blank">Documentação</a>
+                </p>
+                <p>Exemplo de requisição para listar múltiplos personagens:</p>
+                <pre><code>GET https://rickandmortyapi.com/api/character/[1,2,3]</code></pre>
+
+                <!-- Estrutura do Personagem -->
+                <div class="api-schema">
+                    <h3>Estrutura do Personagem</h3>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Chave</th>
+                                <th>Tipo</th>
+                                <th>Descrição</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>id</td>
+                                <td>int</td>
+                                <td>O ID do personagem.</td>
+                            </tr>
+                            <tr>
+                                <td>name</td>
+                                <td>string</td>
+                                <td>O nome do personagem.</td>
+                            </tr>
+                            <tr>
+                                <td>status</td>
+                                <td>string</td>
+                                <td>Status do personagem ('Alive', 'Dead', 'unknown').</td>
+                            </tr>
+                            <tr>
+                                <td>species</td>
+                                <td>string</td>
+                                <td>Espécie do personagem.</td>
+                            </tr>
+                            <tr>
+                                <td>type</td>
+                                <td>string</td>
+                                <td>Tipo ou subspecie do personagem.</td>
+                            </tr>
+                            <tr>
+                                <td>gender</td>
+                                <td>string</td>
+                                <td>Gênero do personagem ('Female', 'Male', 'Genderless', 'unknown').</td>
+                            </tr>
+                            <tr>
+                                <td>origin</td>
+                                <td>object</td>
+                                <td>Nome e link para o local de origem do personagem.</td>
+                            </tr>
+                            <tr>
+                                <td>location</td>
+                                <td>object</td>
+                                <td>Nome e link para o local onde o personagem foi visto por último.</td>
+                            </tr>
+                            <tr>
+                                <td>image</td>
+                                <td>string (url)</td>
+                                <td>Link para a imagem do personagem (300x300px).</td>
+                            </tr>
+                            <tr>
+                                <td>episode</td>
+                                <td>array (urls)</td>
+                                <td>Lista de episódios em que o personagem apareceu.</td>
+                            </tr>
+                            <tr>
+                                <td>url</td>
+                                <td>string (url)</td>
+                                <td>Link para a URL do personagem.</td>
+                            </tr>
+                            <tr>
+                                <td>created</td>
+                                <td>string</td>
+                                <td>Data de criação do personagem na base de dados.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </mat-expansion-panel>
+
+        </mat-accordion>
     </div>
-    <app-rodape></app-rodape>
+</div>
 
 
+<app-rodape></app-rodape>
