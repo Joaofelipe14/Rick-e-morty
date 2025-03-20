@@ -1,17 +1,11 @@
 # Rick and Morty
 
-Este é um projeto desenvolvido com **Angular 16**, mas que aplica conceitos importantes como componentização, separação de responsabilidades, consumo de API e gestão de estado básica. Ele consome a API pública do Rick and Morty ([https://rickandmortyapi.com/](https://rickandmortyapi.com/)) para permitir a pesquisa e exibição de personagens da série. 
-
-## Tecnologias Utilizadas
-- ![Angular](https://img.shields.io/badge/Angular-16-red?style=for-the-badge&logo=angular) **Angular 16**: Framework para desenvolvimento web
-- ![TypeScript](https://img.shields.io/badge/TypeScript-blue?style=for-the-badge&logo=typescript) **TypeScript**: Linguagem utilizada no Angular
-- ![Angular Material](https://img.shields.io/badge/Angular%20Material-orange?style=for-the-badge&logo=angular) **Angular Material**: UI Components
-- ![HttpClient](https://img.shields.io/badge/HttpClient-green?style=for-the-badge) **HttpClient**: Para consumo da API
+Este é um projeto desenvolvido com **Angular 16**, aplicando conceitos importantes como componentização, separação de responsabilidades, consumo de API e gestão de estado básica. Ele consome a API pública do Rick and Morty ([https://rickandmortyapi.com/](https://rickandmortyapi.com/)) para permitir a pesquisa e exibição de personagens da série.
 
 ## Funcionalidades
 - Pesquisa de personagens por nome
 - Filtragem por status (vivo, morto, desconhecido)
-- Navegar na lista de personagens
+- Navegação na lista de personagens
 - Exibição de detalhes do personagem
 - Exibição do total de personagens
 - Exibição das informações do personagem:
@@ -20,7 +14,7 @@ Este é um projeto desenvolvido com **Angular 16**, mas que aplica conceitos imp
   - Status
   - Total de episódios
   - Nome da Localização
-- Extra: Adicionar e listar personagens aos favoritos
+- **Extra:** Adicionar e listar personagens aos favoritos
 
 ## Instalação e Execução
 1. Clone o repositório:
@@ -43,27 +37,64 @@ Este é um projeto desenvolvido com **Angular 16**, mas que aplica conceitos imp
 
 ## Estrutura do Projeto
 O projeto segue uma arquitetura modular e componentizada, com foco na separação de preocupações e na reutilização de código.
+
 ```
-/src
-  |-- app
-      |-- components
-          |-- cabecalho.components
-          |-- rodape.components
-          |-- card.components
-          |-- personagem-modal.components
-      |-- model
-          |-- character.model
-      |-- pages
-          |-- home.pages
-          |-- sobre.pages
-          |-- favoritos.pages
-      |-- services
-          favoritos
-          buscanaApi
-      |-- app.module.ts
-  |-- assets
-  |-- environments
+src/
+├── app/
+│   ├── components/
+│   │   ├── cards-personagens/
+│   │   ├── custom-snackbar/
+│   │   ├── loading/
+│   │   └── modal-detalhes/
+│   ├── layout/
+│   │   ├── cabecalho/
+│   │   └── rodape/
+│   ├── models/
+│   │   └── personagem.model.ts
+│   ├── pages/
+│   │   ├── favoritos/
+│   │   ├── home/
+│   │   └── sobre/
+│   ├── services/
+│   │   ├── personagem.service.ts
+│   │   └── favoritarPersonagem.service.ts
+│   ├── assets/
 ```
+
+## Responsabilidades
+
+### **Componentes**
+Focados na apresentação e interação com o usuário. Cada componente tem uma responsabilidade única:
+
+- **cards-personagens**: Exibição visual dos personagens  
+- **custom-snackbar**: Feedback visual para ações do usuário  
+- **loading**: Indicação de carregamento de dados  
+- **modal-detalhes**: Visualização detalhada de informações  
+
+### **Layout**
+Componentes estruturais que definem o template básico da aplicação:
+
+- **cabecalho**: Navegação e identidade visual  
+- **rodape**: Informações de contato e direitos autorais  
+
+### **Páginas**
+Páginas da aplicação que combinam componentes para criar experiências completas:
+
+- **home**: Página principal com listagem de personagens  
+- **favoritos**: Gerenciamento de personagens favoritos  
+- **sobre**: Informações sobre o aplicativo  
+
+### **Serviços**
+Camada de acesso a dados e lógica de negócios:
+
+- **personagem.service**: Comunicação com API externa  
+- **favoritarPersonagem.service**: Gerenciamento de estado para favoritos  
+
+## Tecnologias Utilizadas
+- ![Angular](https://img.shields.io/badge/Angular-16-red?style=for-the-badge&logo=angular) **Angular 16**: Framework para desenvolvimento web
+- ![TypeScript](https://img.shields.io/badge/TypeScript-blue?style=for-the-badge&logo=typescript) **TypeScript**: Linguagem utilizada no Angular
+- ![Angular Material](https://img.shields.io/badge/Angular%20Material-orange?style=for-the-badge&logo=angular) **Angular Material**: UI Components
+- ![HttpClient](https://img.shields.io/badge/HttpClient-green?style=for-the-badge) **HttpClient**: Para consumo da API
 
 ## API Utilizada
 Os dados são consumidos da API pública do Rick and Morty.
@@ -79,11 +110,3 @@ Sinta-se à vontade para contribuir! Abra uma issue ou envie um PR.
 ## Licença
 Este projeto está sob a licença MIT.
 
-
-## O que esta faltando
-snack-bar de alert                               [x]
-Add icones de status para deixar mais interativo [x]
-Add loading                                      [x]
-filtro ajeitar e add nos favoritos               [x]
-sobre nos                                        [ ]
-AJeitar rodapé                                   [ ]
