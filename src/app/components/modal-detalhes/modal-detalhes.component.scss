@@ -89,3 +89,28 @@ span {
     font-weight: normal;
     margin-left: 10px;
 }
+
+.status-indicador-vivo {
+    background-color: #87F54E;
+}
+
+.status-indicador-morto {
+    background-color: rgb(214, 61, 46);
+}
+
+.status-indicador-desconhecido {
+    background-color: gray;
+}
+
+.icone-especie {
+    width: 20px;
+    height: 20px;
+    margin-left: 5px;
+}
+.status-indicador {
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    margin-right: 5px;
+  }

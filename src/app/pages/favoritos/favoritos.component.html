@@ -1,11 +1,28 @@
 <app-cabecalho></app-cabecalho>
 
-    <div class="container">
-       
-        <app-cards-personagens [personagens]="personagens" (personagemRemovido)="onPersonagemRemovido($event)">
-        </app-cards-personagens>
+<div class="container">
 
-    </div>
-    <app-rodape></app-rodape>
+    <app-loading [isLoading]="loading"></app-loading>
 
+    <div class="filtros">
+        <mat-form-field  style="border-radius: 10px;" appearance="fill">
+          <mat-label>Buscar por nome</mat-label>
+          <input matInput [(ngModel)]="nameFilter" (input)="filtarPersonagens()" placeholder="Nome do personagem" />
+        </mat-form-field>
+  
+        <mat-form-field appearance="fill">
+          <mat-label>Status</mat-label>
+          <mat-select style="border-radius: 10px;" [(ngModel)]="statusFilter" (selectionChange)="filtarPersonagens()">
+            <mat-option value="all">Todos</mat-option>
+            <mat-option value="alive">Vivo</mat-option>
+            <mat-option value="dead">Morto</mat-option>
+            <mat-option value="unknown">Desconhecido</mat-option>
+          </mat-select>
+        </mat-form-field>
+      </div>
+  
+    <app-cards-personagens *ngIf="!loading" [personagens]="personagensFiltrados" (personagemRemovido)="onPersonagemRemovido($event)">
+    </app-cards-personagens>
 
+</div>
+<app-rodape></app-rodape>

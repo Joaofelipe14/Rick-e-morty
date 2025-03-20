@@ -1,24 +1,27 @@
 <!-- Renderização condicional dos templates -->
-<ng-container *ngIf="personagens.length > 0; else nenhumFavorito">
+<ng-container *ngIf="personagens.length > 0 && personagens.length>0;  else nenhumFavorito">
     <ng-container *ngTemplateOutlet="listaFavoritos"></ng-container>
 </ng-container>
 
 <ng-template #nenhumFavorito>
-    <h1 class="error" >Nenhum personagem  encontrado.</h1>
+    <h1 class="error">Nenhum personagem encontrado.</h1>
 </ng-template>
 
 <ng-template #listaFavoritos>
     <div class="personagem-lista" @transicaoDePag>
-        <mat-card *ngFor="let personagem of personagens" class="cartao-personagem">
-            <div class="cabecalho-cartao">
-                <img mat-card-image [src]="personagem.image" [alt]="personagem.name" class="imagem-personagem" />
-                <div class="star-icon" (click)="favoritar(personagem.id)">
-                    <i class="material-icons" [class.favorito]="isFavorito(personagem.id)">
-                        {{ isFavorito(personagem.id) ? 'star' : 'star_border' }}
-                    </i>
-                </div>
+        <mat-card title="Click para ver os detalhes do personagem." *ngFor="let personagem of personagens"
+            class="cartao-personagem">
+
+            <div class="star-icon" (click)="favoritar(personagem.id)">
+                <i class="material-icons" [class.favorito]="isFavorito(personagem.id)">
+                    {{ isFavorito(personagem.id) ? 'star' : 'star_border' }}
+                </i>
             </div>
-            <mat-card-content (click)="verDetalhesPersonagem(personagem)" class="conteudo-cartao">
+            <div class="cabecalho-cartao" (click)="verDetalhesPersonagem(personagem)">
+                <img mat-card-image [src]="personagem.image" [alt]="personagem.name" class="imagem-personagem" />
+
+            </div>
+            <mat-card-content class="conteudo-cartao">
                 <div class="informacoes-personagem">
                     <div class="detalhe-personagem">
                         <span class="rotulo-detalhe">Nome:</span>

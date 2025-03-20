@@ -21,3 +21,8 @@ input {
   justify-content: center;
 
 }
+
+.mat-mdc-form-field-type-mat-select:not(.mat-form-field-disabled) .mat-mdc-text-field-wrapper {
+  cursor: pointer;
+  border-radius: 20px;
+}

@@ -1,4 +1,5 @@
 <app-cabecalho></app-cabecalho>
+<app-loading [isLoading]="loading"></app-loading>
 
 <div *ngIf="!loading && !error">
     <div class="container">
@@ -12,7 +13,7 @@
   
         <mat-form-field appearance="fill">
           <mat-label>Status</mat-label>
-          <mat-select style="border-radius: 10px;" [(ngModel)]="statusFilter" (change)="filtarPersonagens()">
+          <mat-select style="border-radius: 10px;" [(ngModel)]="statusFilter" (selectionChange)="filtarPersonagens()">
             <mat-option value="all">Todos</mat-option>
             <mat-option value="alive">Vivo</mat-option>
             <mat-option value="dead">Morto</mat-option>
@@ -21,6 +22,7 @@
         </mat-form-field>
       </div>
   
+
       <!-- Listagem de personagens -->
         <app-cards-personagens [personagens]="personagensFiltrados"></app-cards-personagens>
 
@@ -33,3 +35,5 @@
   </div>
 
 <app-rodape></app-rodape>
+
+

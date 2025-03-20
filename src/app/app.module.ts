@@ -27,7 +27,8 @@ import { MatPaginatorIntl } from '@angular/material/paginator';
 import { CardsPersonagensComponent } from './components/cards-personagens/cards-personagens.component'; 
 import { MatSidenavModule } from '@angular/material/sidenav'; // Import the MatSidenavModule
 import { MatSnackBarModule } from '@angular/material/snack-bar';
-import { CustomSnackbarComponent } from './components/custom-snackbar/custom-snackbar.component'; // Importe o módulo da Snackbar
+import { CustomSnackbarComponent } from './components/custom-snackbar/custom-snackbar.component';
+import { LoadingComponent } from './loading/loading.component'; // Importe o módulo da Snackbar
 
 
 export function getPaginatorIntl() {
@@ -51,6 +52,7 @@ export function getPaginatorIntl() {
     ModalDetalhesComponent,
     CardsPersonagensComponent,
     CustomSnackbarComponent,
+    LoadingComponent,
   ],
   imports: [
     BrowserModule,

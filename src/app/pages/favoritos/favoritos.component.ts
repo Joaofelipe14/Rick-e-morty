@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Personagem } from 'src/app/models/ personagem.model';
 import { favoritarPersonagemService } from 'src/app/services/favoritarPersonagem.service';
 import { PersonagemService } from 'src/app/services/personagem.service';
 
@@ -13,6 +14,9 @@ export class FavoritosComponent {
   personagens: any[] = [];
   loading: boolean = true;
   error: string = '';
+  personagensFiltrados: Personagem[] = [];
+  nameFilter: string = '';
+  statusFilter: string = 'all';
 
   constructor(private personagemService: PersonagemService,
     private personagemFavoritos: favoritarPersonagemService,
@@ -25,10 +29,15 @@ export class FavoritosComponent {
 
   buscarPersonagens(ids: number[]): void {
     this.loading = true;
+    console.log('this.loading-> ',this.loading)
     this.personagemService.getPersonagemPorId(ids).subscribe({
       next: (data) => {
         this.personagens = data;
+        this.personagens = data;
+        this.personagensFiltrados = this.personagens;
         this.loading = false;
+        console.log(this.loading)
+
       },
       error: (error) => {
         this.error = 'Erro ao carregar os personagens';
@@ -37,6 +46,18 @@ export class FavoritosComponent {
     });
   }
 
+  filtarPersonagens(): void {
+
+    console.log(this.statusFilter)
+
+    console.log(this.nameFilter.toLowerCase())
+    this.personagensFiltrados = this.personagens.filter(character => {
+      const nameMatch = character.name.toLowerCase().includes(this.nameFilter.toLowerCase());
+      const statusMatch = this.statusFilter == 'all' || character.status.toLowerCase() == this.statusFilter.toLowerCase();
+      return nameMatch && statusMatch;
+    });
+  }
+  
   isFavorito(id: number): boolean {
     return this.favoritos.has(id);
   }

@@ -1,33 +1,54 @@
-<div *ngIf="data">  
-  <div class="modal">    
-      <div class="detalhes-personagem">      
-        <img [src]="data.image" [alt]="data.name" class="imagem-personagem" />      
-        <div class="informacoes-personagem">        
-          <h1>{{ data.name }}</h1>        
-          <!-- Linha cinza para separação -->        
-          <hr class="separador" />        
-          <div class="item-detalhe">          
-            <label>Status:</label>          
-            <span>{{ data.status }}</span>        
-          </div>        
-          <div class="item-detalhe">          
-            <label>Espécie:</label>          
-            <span>{{ data.species }}</span>        
-          </div>        
-          <div class="item-detalhe">          
-            <label>Gênero:</label>          
-            <span>{{ data.gender }}</span>        
-          </div>        
-          <div class="item-detalhe">          
-            <label>Local de origem:</label>          
-            <span>{{ data.origin.name }}</span>        
-          </div>        
-          <div class="item-detalhe">          
-            <label>Total de episódios:</label>          
-            <span>{{ data.episode.length }}</span>        
-          </div>      
-        </div>    
-      </div>  
-    </div>  
-  </div>  
-    
+<div *ngIf="data">
+  <div class="modal">
+    <div class="detalhes-personagem">
+      <img [src]="data.image" [alt]="data.name" class="imagem-personagem" />
+      <div class="informacoes-personagem">
+        <h1>{{ data.name }}</h1>
+        <!-- Linha cinza para separação -->
+        <hr class="separador" />
+        <div class="item-detalhe">
+          <label>Status:</label>
+          <span
+            [ngClass]="{'status-vivo': data.status === 'Alive', 'status-morto': data.status === 'Dead', 'status-desconhecido': data.status === 'unknown'}">
+            <span class="status-indicador"
+              [ngClass]="{'status-indicador-vivo': data.status === 'Alive', 'status-indicador-morto': data.status === 'Dead', 'status-indicador-desconhecido': data.status === 'unknown'}"></span>
+            {{ data.status }}
+          </span>
+        </div>
+        <div class="item-detalhe">
+          <label>Espécie:</label>
+          <span>
+            <ng-container [ngSwitch]="data.species">
+              <span *ngSwitchCase="'Human'">Humano</span>
+              <span *ngSwitchCase="'Alien'">Alien</span>
+              <span *ngSwitchCase="'Humanoid'">Humanoide</span>
+              <span *ngSwitchCase="'Unknown'">Desconhecido</span>
+              <span *ngSwitchDefault>Desconhecido</span>
+            </ng-container>
+          </span>
+        </div>
+        <div class="item-detalhe">
+          <label>Gênero:</label>
+          <span>
+            <!-- Exibe de forma mais amigável -->
+            <ng-container [ngSwitch]="data.gender">
+              <span *ngSwitchCase="'Male'">Masculino</span>
+              <span *ngSwitchCase="'Female'">Feminino</span>
+              <span *ngSwitchCase="'Genderless'">Sem Gênero</span>
+              <span *ngSwitchCase="'unknown'">Desconhecido</span>
+              <span *ngSwitchDefault>Desconhecido</span>
+            </ng-container>
+          </span>
+        </div>
+        <div class="item-detalhe">
+          <label>Local de origem:</label>
+          <span>{{ data.origin.name }}</span>
+        </div>
+        <div class="item-detalhe">
+          <label>Total de episódios:</label>
+          <span>{{ data.episode.length }}</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

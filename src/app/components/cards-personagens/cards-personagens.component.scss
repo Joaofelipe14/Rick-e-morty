@@ -64,13 +64,14 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    z-index: 2;
     cursor: pointer;
 }
 
 .star-icon i {
     color: #FFD700;
     font-size: 24px;
-    transition: transform 0.3s ease, color 0.3s ease; /* Adiciona transição suave */
+    transition: transform 0.3s ease, color 0.3s ease; 
 }
 
 .star-icon i:hover {
