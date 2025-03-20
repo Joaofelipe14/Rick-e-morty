@@ -12,11 +12,11 @@
         <mat-card title="Click para ver os detalhes do personagem." *ngFor="let personagem of personagens"
             class="cartao-personagem">
 
-            <div class="star-icon" (click)="favoritar(personagem.id)">
-                <i class="material-icons" [class.favorito]="isFavorito(personagem.id)">
-                    {{ isFavorito(personagem.id) ? 'star' : 'star_border' }}
-                </i>
-            </div>
+            <button class="star-icon" (click)="favoritar(personagem.id)" type="button">
+    <i class="material-icons" [class.favorito]="isFavorito(personagem.id)">
+        {{ isFavorito(personagem.id) ? 'star' : 'star_border' }}
+    </i>
+</button>
             <div class="cabecalho-cartao" (click)="verDetalhesPersonagem(personagem)">
                 <img mat-card-image [src]="personagem.image" [alt]="personagem.name" class="imagem-personagem" />
 
