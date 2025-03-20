@@ -61,16 +61,20 @@ body {
 
 }
 
-// .campo-formulario {
-//     // max-width: 300px;
-//     width: 100%
-// }
+
 
 .container {
     max-width: 1200px;
     margin: 0 auto;
     padding: 0 15px;
     min-height: 86vh;
+}
+
+@media (max-width: 1200px) {
+
+    .container {
+        max-width: 900px;
+    }
 }
 
 @media (max-width: 768px) {
@@ -80,8 +84,10 @@ body {
     }
 
     .filtros {
+        max-width: 500px;
         display: flex;
         flex-direction: column;
+        width: 100%;
     }
 
     .container-topo {
@@ -89,4 +95,5 @@ body {
         display: flex;
         flex-direction: column;
     }
+
 }
