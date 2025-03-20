@@ -1,28 +1,7 @@
-.filtros {
-  display: flex;
-  justify-content: space-between;
-  margin-bottom: 20px;
-}
-
-input {
-  border-radius: 10px;
-}
-
-.error-message {
-  color: red;
-  font-size: 16px;
-  margin-top: 20px;
-  text-align: center;
-}
 
 .centro {
   display: flex;
   margin: 20px auto;
   justify-content: center;
 
-}
-
-.mat-mdc-form-field-type-mat-select:not(.mat-form-field-disabled) .mat-mdc-text-field-wrapper {
-  cursor: pointer;
-  border-radius: 20px;
 }

@@ -2,7 +2,6 @@
 
 <div class="container">
 
-    <app-loading [isLoading]="loading"></app-loading>
 
     <div class="filtros">
         <mat-form-field  style="border-radius: 10px;" appearance="fill">
@@ -10,6 +9,9 @@
           <input matInput [(ngModel)]="nameFilter" (input)="filtarPersonagens()" placeholder="Nome do personagem" />
         </mat-form-field>
   
+            <app-loading [isLoading]="loading"></app-loading>
+
+
         <mat-form-field appearance="fill">
           <mat-label>Status</mat-label>
           <mat-select style="border-radius: 10px;" [(ngModel)]="statusFilter" (selectionChange)="filtarPersonagens()">

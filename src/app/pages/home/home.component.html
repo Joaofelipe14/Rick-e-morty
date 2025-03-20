@@ -1,5 +1,4 @@
 <app-cabecalho></app-cabecalho>
-<app-loading [isLoading]="loading"></app-loading>
 
 <div *ngIf="!loading && !error">
     <div class="container">
@@ -11,6 +10,7 @@
           <input matInput [(ngModel)]="nameFilter" (input)="filtarPersonagens()" placeholder="Nome do personagem" />
         </mat-form-field>
   
+        <app-loading [isLoading]="loading"></app-loading>
         <mat-form-field appearance="fill">
           <mat-label>Status</mat-label>
           <mat-select style="border-radius: 10px;" [(ngModel)]="statusFilter" (selectionChange)="filtarPersonagens()">

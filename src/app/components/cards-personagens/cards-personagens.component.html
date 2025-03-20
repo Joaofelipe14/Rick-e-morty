@@ -21,7 +21,7 @@
                 <img mat-card-image [src]="personagem.image" [alt]="personagem.name" class="imagem-personagem" />
 
             </div>
-            <mat-card-content class="conteudo-cartao">
+            <mat-card-content (click)="verDetalhesPersonagem(personagem)" class="conteudo-cartao">
                 <div class="informacoes-personagem">
                     <div class="detalhe-personagem">
                         <span class="rotulo-detalhe">Nome:</span>

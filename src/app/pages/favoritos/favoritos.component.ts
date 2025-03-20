@@ -35,7 +35,7 @@ export class FavoritosComponent {
         this.personagens = data;
         this.personagens = data;
         this.personagensFiltrados = this.personagens;
-        this.loading = false;
+        // this.loading = false;
         console.log(this.loading)
 
       },
